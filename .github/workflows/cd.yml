@@ -22,12 +22,4 @@ jobs:
           git pull origin master
           npm install
           npm run migrate up
-          
-          # Install npm packages locally
-          npm install --prefix ~/.npm-global -g pm2
-
-          npm install
-          npm run migrate up
-
-          # Restart the application using PM2
-          ~/.npm-global/bin/pm2 restart auth-api
+          pm2 restart auth-api
