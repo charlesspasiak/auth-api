@@ -20,6 +20,9 @@ jobs:
         script: |
           cd ~/auth-api
           git pull origin master
+           
+          sudo apt-get install -y nodejs npm
+                  
           npm install
           npm run migrate up
           ~/.npm-global/bin/pm2 restart auth-api
