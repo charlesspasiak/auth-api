@@ -22,4 +22,9 @@ jobs:
           git pull origin master
           npm install
           npm run migrate up
-          pm2 restart auth-api --update-env
+          
+          # Install PM2 if not already installed
+          command -v pm2 || npm install -g pm2
+
+          # Restart the application using PM2
+          pm2 restart auth-api
