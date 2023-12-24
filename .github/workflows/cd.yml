@@ -19,7 +19,7 @@ jobs:
         port: ${{ secrets.SSH_PORT }}
         script: |
           cd ~/auth-api
-          git pull origin master                                      
+          git pull origin master
           npm install
           npm run migrate up
-          ~/.npm-global/bin/pm2 restart auth-api
+          pm2 restart auth-api
